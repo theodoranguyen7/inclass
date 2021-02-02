@@ -1,0 +1,8 @@
+replace : map.o replace.o
+    gcc -o replace map.o replace.o
+
+map.o : map.c map.h
+    gcc -c -o map.o map.c
+
+replace.o : replace.c map.h
+    gcc -c -o replace.o replace.c
