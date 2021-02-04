@@ -12,6 +12,7 @@ enum scan_token_enum {
     TK_MULT,   /* * */
     TK_DIV,    /* / */
     TK_EOT,    /* end of text */
+    NUM_TOKENS,
 };
 
 #define SCAN_STRINGS {\
