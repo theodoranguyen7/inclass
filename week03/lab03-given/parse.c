@@ -37,6 +37,8 @@ void parse_tree_print_indent(int level) {
 void parse_tree_print_expr(struct parse_node_st *np, int level) {
     parse_tree_print_indent(level);
     printf("EXPR ");
+
+    // TODO: add support for oper1
     
     if (np->type == EX_INTVAL) {
         printf("INTVAL %d\n", np->intval.value);
