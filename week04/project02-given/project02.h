@@ -130,5 +130,6 @@ void eval_print(uint32_t value);
  * convert.c
  */
 uint32_t convert_str_to_uint32(char *, int);
+/* TODO: add prototypes for the three (four?) int-to-str functions
 
 #endif /* _PROJECT02_H */

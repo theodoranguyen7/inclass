@@ -10,6 +10,11 @@ int main(int argc, char **argv) {
     int result;
     bool verbose = false;
 
+    /*
+        TODO: 
+        parse command line arguments to get -b <base> -w <width> and -u
+        optional: make up a config struct?
+    */
     if ((argc != 3) || (strncmp(argv[1], "-e", SCAN_TOKEN_LEN) != 0)) {
         printf("usage: project02 -e \"expr\"\n");
         printf("  example: project02 -e \"1 + 2\"\n");
