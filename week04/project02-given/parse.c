@@ -40,7 +40,7 @@ struct parse_node_st * parse_operand(struct parse_table_st *pt,
         tp = scan_table_get(st, -1);
         np = parse_node_new(pt);
         np->type = INTVAL;
-        np->intval.value = atoi(tp->value);
+        np->intval.value = convert_str_to_uint32(tp->value, 10);
     } else if (scan_table_accept(st, TK_MINUS)) {
         tp = scan_table_get(st, -1);
         np1 = parse_node_new(pt);

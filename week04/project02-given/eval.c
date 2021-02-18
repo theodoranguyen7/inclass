@@ -8,6 +8,12 @@ void eval_error(char *err) {
 }
 
 void eval_print(uint32_t value) {
+
+    // mask to desired width
+    // implement in convert.c:
+    // int to bin str
+    // int to hex str
+    // int to dec str
     printf("%d\n", value);
 }
 

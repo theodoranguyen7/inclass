@@ -2,6 +2,7 @@
 #ifndef _PROJECT02_H
 #define _PROJECT02_H
 
+#include <ctype.h>
 #include <fcntl.h>
 #include <stdarg.h>
 #include <stdbool.h>
@@ -124,5 +125,10 @@ void parse_tree_print(struct parse_node_st *np);
 
 uint32_t eval_tree(struct parse_node_st *np);
 void eval_print(uint32_t value);
+
+/* 
+ * convert.c
+ */
+uint32_t convert_str_to_uint32(char *, int);
 
 #endif /* _PROJECT02_H */
