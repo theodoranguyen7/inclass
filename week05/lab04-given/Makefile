@@ -1,4 +1,4 @@
-PROG = lab03
+PROG = lab04
 OBJS = add_c.o add_s.o add4_c.o add4_s.o quadratic_c.o quadratic_s.o\
 	   min_c.o min_s.o
 HEADERS = 
