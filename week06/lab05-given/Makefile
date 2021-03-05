@@ -11,7 +11,7 @@ CFLAGS = -g
 
 # Pattern rule for .s files
 %.o : %.s
-	as -o $@ $<
+	as $(CFLAGS) -o $@ $<
 
 all : $(PROG)
 
