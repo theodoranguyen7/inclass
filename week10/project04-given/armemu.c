@@ -46,6 +46,7 @@ void armemu_init(struct arm_state *asp, uint32_t *fp,
     /* Initialize the direct mapped cache */
     if (g_cache_size > 0) {
         asp->cache_on = true;
+        asp->cache_type = g_cache_type;
         cache_init(asp, g_cache_size);
     }
 }
@@ -138,5 +139,5 @@ int armemu(struct arm_state *asp) {
 void armemu_print(struct arm_state *asp) {
     printf("\n");
     printf("===Dynamic Analsys Results===\n");
-    /* PUT YOUR CODE HERE */
+    /* TODO PUT YOUR CODE HERE */
 }
