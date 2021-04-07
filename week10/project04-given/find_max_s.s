@@ -1,30 +1,29 @@
-/* find_max_s - find the maximum value in an interger array */
+@ find_max_s - find the maximum value in an integer array 
 
 .global find_max_s
 
-/*
- * r0 - int *array
- * r1 - int n
- *
- * r2 - int i
- * r3 - int max
- */     
+@ r0 = the array, r1 = array len
+    
 find_max_s:
-    mov r2, #1
-    ldr r3, [r0]              /* r3 = array[0] */
+    ldr r2, [r0] 	@ r2 is where the max is stored
+    mov ip, #0		@ the counter
 
-find_max_loop:
-    cmp r2, r1
-    bge find_max_loop_exit
-    ldr r12, [r0, r2, LSL #2] /* r12 = array[i] */
-    cmp r12, r3
-    ble find_max_not_greater
-    mov r3, r12               /* r3 = array[i] */    
+loop:
+    cmp ip, r1		@ when ip is the length of array
+    beq done
+    ldr r3, [r0]	@ loading r3 with what r0 is pointing to
+    cmp r3, r2
+    bgt swap
+	
+next:
+    add r0, r0, #4	@ r0 goes to the next 4-byte int in the array
+    add ip, ip, #1	@ incrementing loop by index
+    b loop
 
-find_max_not_greater:
-    add r2, r2, #1
-    b find_max_loop
+swap:
+    mov r2, r3
+    b next
 
-find_max_loop_exit:
-    mov r0, r3
+done:
+    mov r0, r2
     bx lr
